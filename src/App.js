@@ -39,14 +39,23 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="m-4"> Santa Claus To-do List</h1>
+      
+      <h1 className="m-4 text-white text-center"> Santa Claus To-do List</h1>
+      <div className="d-flex align-items-end p-3 flex-wrap">
+      <div className="col-md-9">
       {
         state.todo.map(task=>(
           <Todo todo={task} toggleComplete={toggleComplete}/>
         ))
       }
-      <h3 className="m-4">Help us remind Santa if he misses anything! </h3>
+      </div>
+      <div className="col-md-3">
+        <img style={{width: '100%'}}src="https://cdn.pixabay.com/photo/2017/03/21/21/28/santa-claus-2163392_960_720.png" alt="cute Santa illustration" />
+      </div>
+      </div>
+      
       <TodoForm handleSubmit={handleSubmit} handleChanges={handleChanges} newTask={newTask} handleCompleted={handleCompleted} handleDateText={handleDateText}/>
+      
     </div>
   );
 }
